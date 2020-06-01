@@ -3,9 +3,9 @@ using System.Threading.Tasks;
 using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartup(typeof(WeatherForcast.Startup))]
+[assembly: OwinStartup(typeof(WeatherForecast.Startup))]
 
-namespace WeatherForcast
+namespace WeatherForecast
 {
     public partial class Startup
     {

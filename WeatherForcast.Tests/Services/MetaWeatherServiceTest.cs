@@ -1,8 +1,8 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Linq;
-using WeatherForcast.Application.Services.MetaWeather;
+using WeatherForecast.Application.Services.MetaWeather;
 
-namespace WeatherForcast.Tests.Services
+namespace WeatherForecast.Tests.Services
 {
     [TestClass]
     public class MetaWeatherServiceTest

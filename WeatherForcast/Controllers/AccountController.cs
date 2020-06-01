@@ -6,10 +6,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using WeatherForcast.Application.Models.Auth;
-using WeatherForcast.ViewModels;
+using WeatherForecast.Application.Models.Auth;
+using WeatherForecast.ViewModels;
 
-namespace WeatherForcast.Controllers
+namespace WeatherForecast.Controllers
 {
     [Authorize]
     public class AccountController : Controller

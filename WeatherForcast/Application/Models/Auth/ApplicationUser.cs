@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNet.Identity;
 
-namespace WeatherForcast.Application.Models.Auth
+namespace WeatherForecast.Application.Models.Auth
 {
     public class ApplicationUser : IUser
     {

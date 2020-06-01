@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WeatherForcast.Application.Models;
+using WeatherForecast.Application.Models;
 
-namespace WeatherForcast.Application.Services
+namespace WeatherForecast.Application.Services
 {
     interface IWeatherService
     {

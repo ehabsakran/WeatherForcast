@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Globalization;
 
-namespace WeatherForcast.Application.Helpers
+namespace WeatherForecast.Application.Helpers
 {
     public static class StringHelpers
     {

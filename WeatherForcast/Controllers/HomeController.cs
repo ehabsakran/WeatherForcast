@@ -6,11 +6,11 @@ using System.Net.Http;
 using System.Net.Http.Formatting;
 using System.Web;
 using System.Web.Mvc;
-using WeatherForcast.Application.Services;
-using WeatherForcast.Application.Services.MetaWeather;
-using WeatherForcast.ViewModels;
+using WeatherForecast.Application.Services;
+using WeatherForecast.Application.Services.MetaWeather;
+using WeatherForecast.ViewModels;
 
-namespace WeatherForcast.Controllers
+namespace WeatherForecast.Controllers
 {
     [RequireHttps]
     public class HomeController : Controller
@@ -28,12 +28,12 @@ namespace WeatherForcast.Controllers
             return PartialView("_WeatherData", model);
         }
 
-        private WeatherForcastViewModel GetWeatherData(string location)
+        private WeatherForecastViewModel GetWeatherData(string location)
         {
             IWeatherService service = new MetaWeatherService();
             var weatherItems = service.GetWeatherItems(location);
 
-            WeatherForcastViewModel model = new WeatherForcastViewModel
+            WeatherForecastViewModel model = new WeatherForecastViewModel
             {
                 WeatherItems = weatherItems,
                 Location = location

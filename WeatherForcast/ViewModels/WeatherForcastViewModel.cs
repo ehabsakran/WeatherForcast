@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Razor.Text;
-using WeatherForcast.Application.Helpers;
-using WeatherForcast.Application.Models;
+using WeatherForecast.Application.Helpers;
+using WeatherForecast.Application.Models;
 
-namespace WeatherForcast.ViewModels
+namespace WeatherForecast.ViewModels
 {
-    public class WeatherForcastViewModel
+    public class WeatherForecastViewModel
     {
         private string location = string.Empty;
         public IEnumerable<WeatherItem> WeatherItems { get; set; }

@@ -3,7 +3,7 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Owin;
 
-namespace WeatherForcast
+namespace WeatherForecast
 {
 
     public partial class Startup

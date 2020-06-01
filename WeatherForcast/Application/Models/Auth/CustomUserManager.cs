@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNet.Identity;
 using System.Threading.Tasks;
 
-namespace WeatherForcast.Application.Models.Auth
+namespace WeatherForecast.Application.Models.Auth
 {
     public class CustomUserManager : UserManager<ApplicationUser>
     {

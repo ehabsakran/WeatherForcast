@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Web.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using WeatherForcast;
-using WeatherForcast.Application.Models;
-using WeatherForcast.Controllers;
-using WeatherForcast.ViewModels;
+using WeatherForecast;
+using WeatherForecast.Application.Models;
+using WeatherForecast.Controllers;
+using WeatherForecast.ViewModels;
 
-namespace WeatherForcast.Tests.Controllers
+namespace WeatherForecast.Tests.Controllers
 {
     [TestClass]
     public class HomeControllerTest
@@ -35,7 +35,7 @@ namespace WeatherForcast.Tests.Controllers
 
             // Act
             PartialViewResult result = controller.LoadWeather("belfast") as PartialViewResult;
-            WeatherForcastViewModel model = result.Model as WeatherForcastViewModel;
+            WeatherForecastViewModel model = result.Model as WeatherForecastViewModel;
 
             // Assert
             Assert.IsNotNull(result);

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace WeatherForcast.Application.Models.Auth
+namespace WeatherForecast.Application.Models.Auth
 {
     public class CustomUserSore<T> : IUserStore<T> where T : ApplicationUser
     {

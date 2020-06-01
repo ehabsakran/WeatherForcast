@@ -6,9 +6,9 @@ using System.Net.Http;
 using System.Net.Http.Formatting;
 using System.Net.Http.Headers;
 using System.Web;
-using WeatherForcast.Application.Models;
+using WeatherForecast.Application.Models;
 
-namespace WeatherForcast.Application.Services.MetaWeather
+namespace WeatherForecast.Application.Services.MetaWeather
 {
     public partial class MetaWeatherService : IWeatherService
     {

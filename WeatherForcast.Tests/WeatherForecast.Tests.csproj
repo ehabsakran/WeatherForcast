@@ -100,9 +100,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\WeatherForcast\WeatherForcast.csproj">
+    <ProjectReference Include="..\WeatherForcast\WeatherForecast.csproj">
       <Project>{959BE1BE-9EC4-4759-BF04-5C89EFE87193}</Project>
-      <Name>WeatherForcast</Name>
+      <Name>WeatherForecast</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

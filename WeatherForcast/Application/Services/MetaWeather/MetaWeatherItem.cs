@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace WeatherForcast.Application.Services.MetaWeather
+namespace WeatherForecast.Application.Services.MetaWeather
 {
     public partial class MetaWeatherService
     {
