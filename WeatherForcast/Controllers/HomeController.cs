@@ -31,13 +31,16 @@ namespace WeatherForecast.Controllers
         private WeatherForecastViewModel GetWeatherData(string location)
         {
             IWeatherService service = new MetaWeatherService();
+
             var weatherItems = service.GetWeatherItems(location);
+            var top5Items = weatherItems.Count() > 4 ? weatherItems.Take(5) : weatherItems;
 
             WeatherForecastViewModel model = new WeatherForecastViewModel
             {
-                WeatherItems = weatherItems,
+                WeatherItems = top5Items,
                 Location = location
             };
+
             return model;
         }
 
