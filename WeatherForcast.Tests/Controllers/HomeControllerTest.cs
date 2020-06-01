@@ -40,7 +40,7 @@ namespace WeatherForcast.Tests.Controllers
             // Assert
             Assert.IsNotNull(result);
             Assert.IsNotNull(model);
-            Assert.AreEqual("belfast", model.Location);
+            Assert.AreEqual("Belfast", model.Location);
         }
     }
 }
