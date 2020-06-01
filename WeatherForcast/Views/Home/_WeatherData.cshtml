@@ -1,0 +1,30 @@
+﻿@model WeatherForcast.ViewModels.WeatherForcastViewModel
+
+<div id="weatherData" class="mt-2">
+    <div class="card">
+        @if (Model.WeatherItems.Count() == 0)
+        {
+            <div class="text-center card-body">
+                <h4>No data available for @Model.Location</h4>
+                <p>Please try a different location</p>
+            </div>
+        }
+        else
+        {
+            <h1 class="card-header">@Model.Location</h1>
+            <div class="card-body">
+                @foreach (var forecast in Model.WeatherItems)
+                {
+                <div class="pl-1">
+                    <h4>@forecast.ApplicableDate.ToShortDateString()</h4>
+                    @*<div>Min: @forecast.min_temp Cº, Max: @forecast.max_temp Cº</div>*@
+                    <div>@forecast.State</div>
+                    <img src="https://www.metaweather.com/static/img/weather/@(forecast.StateAbbreviation).svg" style="width:32px" />
+                    <hr />
+                </div>
+                }
+            </div>
+        }
+
+    </div>
+</div>

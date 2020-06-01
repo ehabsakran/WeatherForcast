@@ -1,0 +1,78 @@
+﻿@model WeatherForcast.ViewModels.WeatherForcastViewModel
+
+<div id="container">
+    <div class="mt-2 mt-md-0 ml-auto mr-3 pl-3">
+        <form class="form-inline row" id="searchForm">
+            <input class="form-control mr-sm-2 col-sm-3 ml-auto" id="inputSearch" type="text" placeholder="Enter city to search..." aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0 col-sm-1 col-6 " type="submit">Search</button>
+        </form>
+    </div>
+
+    <div class="row hidden" id="loader">
+        <div class=" mx-auto mt-5">
+            <img src="~/content/Images/ajax-loader.gif" height="30" />
+        </div>
+    </div>
+
+    <div id="content">
+        <!-- Content that should be draggable for refreshing goes in here -->
+        <div class="text-left">
+
+            <div id="weatherData">
+                @Html.Partial("_WeatherData", Model)
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        PullToRefresh.init({
+            mainElement: '#container',
+            onRefresh: function () { loadWeatherData(); }
+        });
+
+        function ShowLoading() {
+            $('#loader').removeClass('hidden');
+        }
+
+        function HideLoading() {
+            $('#loader').addClass('hidden');
+        }
+
+        $('#searchForm').submit(function (e) {
+            e.preventDefault();
+            loadWeatherData();
+        });
+
+        function loadWeatherData() {
+            let location = $('#inputSearch').val() || 'Belfast';
+
+            $.ajax({
+                url: '/Home/LoadWeather?location=' + location,
+                type: 'GET',
+                async: true,
+                dataType: 'text',
+                processData: false,
+                beforeSend: ShowLoading,
+                complete: HideLoading,
+                success: function (weatherData) {
+                    var $weatherData = $(weatherData);
+
+                    $weatherData.css('opacity', 0);
+
+                    $('#weatherData').replaceWith($weatherData[0]);
+
+                    $weatherData.animate({
+                        opacity: 1,
+                    }, 800, function () {
+
+                    });
+                }
+            });
+        }
+    });
+</script>

@@ -1,0 +1,65 @@
+﻿@using Microsoft.AspNet.Identity
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forcast Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            @Html.ActionLink("Weather Forcast", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse" id="navbarCollapse" style="">
+                <ul class="navbar-nav mr-auto">
+                </ul>
+
+
+                @if (Request.IsAuthenticated)
+                {
+                    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+                    {
+                        @Html.AntiForgeryToken()
+
+
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="navbar-brand">
+                                Hello @User.Identity.GetUserName()
+                            </li>
+                            <li class="navbar-brand"><a href="javascript:document.getElementById('logoutForm').submit()" class="nav-lin btn btn-secondary">Log off</a></li>
+                        </ul>
+                    }
+                }
+
+            </div>
+        </nav>
+    </header>
+
+    <div class="container mt-4 body-content">
+
+
+        @RenderBody()
+        <hr />
+
+        <footer>
+            <p>&copy; @DateTime.Now.Year -Weather Forcast Application</p>
+        </footer>
+    </div>
+
+
+    <script src="https://unpkg.com/pulltorefreshjs@0.1.20/dist/index.umd.js"></script>
+    <script>
+        /* global PullToRefresh */
+
+    </script>
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
